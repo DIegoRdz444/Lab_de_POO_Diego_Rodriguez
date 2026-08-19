@@ -1,0 +1,10 @@
+""Preguntas de reflexión""
+
+¿Por qué declaramos los atributos como private y no como public?  
+→ Para aplicar encapsulación, proteger los datos y controlar el acceso mediante métodos.
+
+¿Qué pasaría si quitaras el super() del constructor de Perro?  
+→ Los atributos heredados (nombre, edad, peso) no se inicializarían correctamente, causando errores o valores nulos.
+
+¿Qué ventaja tiene sobreescribir toString() en lugar de crear un método con otro nombre?  
+→ Permite imprimir directamente la información del objeto con System.out.println(objeto), facilitando depuración y legibilidad.
