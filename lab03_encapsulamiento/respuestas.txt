@@ -1,0 +1,10 @@
+1. ¿Cuál es la diferencia entre private y protected?
+private: solo accesible dentro de la misma clase.
+protected: accesible dentro de la clase y sus subclases.
+Se usa protected en velocidadMax porque las subclases necesitan manipularlo directamente.
+
+2. ¿Por qué marca y modelo no tienen setter?  
+Porque son datos que no deberían cambiar una vez creado el objeto, garantizando consistencia.
+
+3. ¿Qué pasaría si un setter no tuviera validación y alguien pusiera un año negativo?  
+El objeto tendría un estado inválido, lo que rompe la lógica del sistema. El encapsulamiento evita eso.
