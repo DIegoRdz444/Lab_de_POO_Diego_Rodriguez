@@ -1,0 +1,30 @@
+package lab04_herencia;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("=== Batalla RPG ===\n");
+
+        Guerrero guerrero = new Guerrero("Thorin", 5, 200, 85, "Cota de Malla");
+        Mago mago = new Mago("Gandalf", 8, 200, 120, "Fuego");
+        Arquero arquero = new Arquero("Legolas", 6, 120, "Arco largo", 95);
+
+        System.out.println("-- Ronda 1: Ataques --");
+        guerrero.atacar();
+        mago.atacar();
+        arquero.atacar();
+
+        System.out.println("\n-- Ronda 2: Defensas --");
+        guerrero.defender();
+        mago.defender();
+        arquero.defender();
+
+        System.out.println("\n-- Daño recibido --");
+        guerrero.recibirDanio(60);
+        mago.recibirDanio(200);
+
+        System.out.println("\n-- Estado final --");
+        System.out.println(guerrero);
+        System.out.println(mago);
+        System.out.println(arquero);
+    }
+}
