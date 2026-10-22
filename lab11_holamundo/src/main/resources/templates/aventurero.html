@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Aventurero</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #16213e;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .caja {
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid #4a90d9;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: gold;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="caja">
+
+    <h1>Aventurero RPG</h1>
+
+    <p>
+        Nombre:
+        <strong th:text="${aventurero.nombre}">
+            Nombre
+        </strong>
+    </p>
+
+    <p>
+        Clase:
+        <strong th:text="${aventurero.clase}">
+            Clase
+        </strong>
+    </p>
+
+    <p>
+        Nivel:
+        <strong th:text="${aventurero.nivel}">
+            Nivel
+        </strong>
+    </p>
+
+</div>
+
+</body>
+</html>
