@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Agenda de Contactos</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#1a1a2e;
+color:white;
+padding:40px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#0f3460;
+padding:10px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #333;
+}
+
+.btn{
+background:#4a90d9;
+padding:10px;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.editar{
+color:#4a90d9;
+}
+
+.eliminar{
+color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Agenda de Contactos</h1>
+
+<a
+href="/nuevo"
+class="btn">
+
+Nuevo Contacto
+
+</a>
+
+<br><br>
+
+<table>
+
+<tr>
+
+<th>Nombre</th>
+<th>Apellido</th>
+<th>Email</th>
+<th>Teléfono</th>
+<th>Acciones</th>
+
+</tr>
+
+<tr th:each="c : ${contactos}">
+
+<td th:text="${c.nombre}"></td>
+
+<td th:text="${c.apellido}"></td>
+
+<td th:text="${c.email}"></td>
+
+<td th:text="${c.telefono}"></td>
+
+<td>
+
+<a
+class="editar"
+th:href="@{/editar/{id}(id=${c.id})}">
+
+Editar
+
+</a>
+
+|
+
+<a
+class="eliminar"
+th:href="@{/eliminar/{id}(id=${c.id})}">
+
+Eliminar
+
+</a>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>
