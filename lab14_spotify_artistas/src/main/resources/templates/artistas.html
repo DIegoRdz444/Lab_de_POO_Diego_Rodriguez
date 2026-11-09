@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Spotify Artistas</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#121212;
+color:white;
+padding:40px;
+}
+
+h1{
+color:#1DB954;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#1DB954;
+padding:12px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #333;
+}
+
+.btn{
+background:#1DB954;
+padding:10px;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.editar{
+color:#4ea3ff;
+}
+
+.eliminar{
+color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Spotify Artist Manager</h1>
+
+<a
+href="/nuevo"
+class="btn">
+
+Nuevo Artista
+
+</a>
+
+<br><br>
+
+<table>
+
+<tr>
+
+<th>Nombre</th>
+<th>Genero</th>
+<th>Pais</th>
+<th>Oyentes Mensuales</th>
+<th>Acciones</th>
+
+</tr>
+
+<tr th:each="a : ${artistas}">
+
+<td th:text="${a.nombre}"></td>
+
+<td th:text="${a.genero}"></td>
+
+<td th:text="${a.pais}"></td>
+
+<td th:text="${a.oyentesMensuales}"></td>
+
+<td>
+
+<a
+class="editar"
+th:href="@{/editar/{id}(id=${a.id})}">
+
+Editar
+
+</a>
+
+|
+
+<a
+class="eliminar"
+th:href="@{/eliminar/{id}(id=${a.id})}">
+
+Eliminar
+
+</a>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>
